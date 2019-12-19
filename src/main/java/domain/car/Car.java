@@ -13,6 +13,10 @@ public class Car {
 		this.name = new Name(name);
 	}
 
+	public String getName() {
+		return name.get();
+	}
+
 	private boolean hasSignal() {
 		return RandomGenerator.next() >= SIGNAL;
 	}
@@ -25,5 +29,9 @@ public class Car {
 
 	public int comparePositionTo(Car that) {
 		return position.compareTo(that.position);
+	}
+
+	public boolean equalsPosition(Car that) {
+		return position.equals(that.position);
 	}
 }

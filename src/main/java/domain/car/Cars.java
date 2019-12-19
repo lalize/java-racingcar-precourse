@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+
+import domain.winner.Winner;
 
 public class Cars {
 	private static final String NAMES_OVERLAP_ERROR = "중복된 이름이 존재한다.";
@@ -31,6 +34,14 @@ public class Cars {
 
 	public Car getMaxPositionCar() {
 		return cars.stream().max(Car::comparePositionTo).orElse(null);
+	}
+
+	public List<Winner> getWinners() {
+		Car maxPositionCar = getMaxPositionCar();
+		return cars.stream()
+				.filter(car -> car.equalsPosition(maxPositionCar))
+				.map(Winner::new)
+				.collect(Collectors.toList());
 	}
 
 	public void move() {

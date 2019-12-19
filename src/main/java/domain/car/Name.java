@@ -6,7 +6,7 @@ public class Name {
 	private static final String NAME_EMPTY_ERROR = "이름이 비어있다.";
 	private static final String NAME_BLANK_ERROR = "이름에 공백이 존재한다.";
 	private static final String NAME_SIZE_ERROR = "이름이 " + MAX_NAME_SIZE + "자를 초과한다.";
-	
+
 	private final String name;
 
 	public Name(String name) {
@@ -36,5 +36,9 @@ public class Name {
 		if (name.length() > MAX_NAME_SIZE) {
 			throw new IllegalArgumentException(NAME_SIZE_ERROR);
 		}
+	}
+
+	public String get() {
+		return name;
 	}
 }
