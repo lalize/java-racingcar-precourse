@@ -32,4 +32,8 @@ public class Cars {
 	public Car getMaxPositionCar() {
 		return cars.stream().max(Car::comparePositionTo).orElse(null);
 	}
+
+	public void move() {
+		cars.forEach(Car::moveIfHasSignal);
+	}
 }
