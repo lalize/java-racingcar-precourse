@@ -22,4 +22,8 @@ public class Car {
 			position.plusOne();
 		}
 	}
+
+	public int comparePositionTo(Car that) {
+		return position.compareTo(that.position);
+	}
 }

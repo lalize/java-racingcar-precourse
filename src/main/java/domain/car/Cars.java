@@ -28,4 +28,8 @@ public class Cars {
 			throw new IllegalArgumentException(NAMES_OVERLAP_ERROR);
 		}
 	}
+
+	public Car getMaxPositionCar() {
+		return cars.stream().max(Car::comparePositionTo).orElse(null);
+	}
 }
