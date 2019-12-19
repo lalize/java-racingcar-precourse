@@ -1,4 +1,4 @@
-package domain;
+package domain.car;
 
 public class Car {
 	private static final int MAX_NAME_SIZE = 5;
