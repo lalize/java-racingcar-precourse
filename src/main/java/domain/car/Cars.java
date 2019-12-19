@@ -6,8 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import domain.car.Car;
-
 public class Cars {
 	private static final String NAMES_OVERLAP_ERROR = "중복된 이름이 존재한다.";
 
