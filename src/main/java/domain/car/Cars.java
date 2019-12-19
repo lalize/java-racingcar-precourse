@@ -3,13 +3,14 @@ package domain.car;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import domain.winner.Winner;
 
-public class Cars {
+public class Cars implements Iterable<Car> {
 	private static final String NAMES_OVERLAP_ERROR = "중복된 이름이 존재한다.";
 
 	private final List<Car> cars = new ArrayList<>();
@@ -46,5 +47,10 @@ public class Cars {
 
 	public void move() {
 		cars.forEach(Car::moveIfHasSignal);
+	}
+
+	@Override
+	public Iterator<Car> iterator() {
+		return cars.iterator();
 	}
 }
