@@ -17,6 +17,10 @@ public class Car {
 		return name.get();
 	}
 
+	public int getPosition() {
+		return position.get();
+	}
+
 	private boolean hasSignal() {
 		return RandomGenerator.next() >= SIGNAL;
 	}

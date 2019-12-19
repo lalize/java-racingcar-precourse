@@ -32,4 +32,8 @@ public class Position implements Comparable<Position> {
 	public int hashCode() {
 		return Objects.hash(position);
 	}
+
+	public int get() {
+		return position;
+	}
 }
